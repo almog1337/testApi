@@ -1,11 +1,15 @@
 const express = require('express');
 import { Request, Response } from "express";
 import { connectToDatabase } from "./database";
+import dotenv from "dotenv";
+
+dotenv.config();
 const app = express();
 const port = 3000;
 
+
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello hunters');
+  res.send(process.env.MONGO_DB_NAME);
 });
 
 connectToDatabase();
