@@ -10,7 +10,7 @@ const port = 3000;
 
 
 app.get('/', async (req: Request, res: Response) => {
-  res.send(await getAll());
+  res.send(process.env.OPENSHIFT_MONGODB_DB_URL);
 });
 
 app.post('/:username', async (req: Request, res: Response) => {
