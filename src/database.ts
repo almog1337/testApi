@@ -10,7 +10,8 @@ export async function connectToDatabase() {
             port: Number(process.env.MONGO_DB_PORT),
             database: process.env.MONGO_DB_NAME,
             username: process.env.MONGO_DB_USERNAME,
-            password: process.env.MONGO_DB_PASSWORD
+            password: process.env.MONGO_DB_PASSWORD,
+            host: process.env.MONGO_DB_HOST
         });
         console.log("uri: ", uri);
         console.log("connection to db...");
